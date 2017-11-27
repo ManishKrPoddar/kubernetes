@@ -1,8 +1,8 @@
 #Package and dependencies
 yum install -y ntp
-systemctl start ntp
-systemctl enable ntp
-systemctl status ntp
+systemctl start ntpd
+systemctl enable ntpd
+systemctl status ntpd
 vim /etc/host
 give master and mini
 ip hostname
