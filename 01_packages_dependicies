@@ -3,10 +3,10 @@ yum install -y ntp
 systemctl start ntpd
 systemctl enable ntpd
 systemctl status ntpd
-vim /etc/host
-give master and mini
+vim /etc/hosts
+give master and minions in the format below
 ip hostname
-
+give master in vi /etc/hostname
 ping centos-minion-1
 vim /etc/yum.repo.d/virt7-docker-common-release.repo
 [virt7-docker-common-release]
