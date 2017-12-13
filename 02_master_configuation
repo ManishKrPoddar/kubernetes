@@ -1,0 +1,28 @@
+cd /etc/kubernetes
+vi config
+
+KUBE_MASTER="--master=http://master:8080"
+
+KUBE_ETCD_SERVERS="--etcd-servers=http://centos-master:2379"
+
+cd /etc/etcd
+vi etcd.conf
+
+ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:2379"
+
+ETCD_ADVERTISE_CLIENT_="http://0.0.0.0:2379"
+
+vi apiserver
+
+KUBE_API_ADDRESS="--address=0.0.0.0"
+
+KUBE_API_PORT="--port=8080"
+
+KUBELET_PORT="--kublet-port=10250"
+
+Coment out 
+KUBE_ADMISSION_CONTROL
+
+systermctl enable kube-apiserver kube-controller-manager kube-scheduler
+systemctl start kube-apiserver kube-controller-manager kube-scheduler
+systemctl 
